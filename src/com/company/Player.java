@@ -9,6 +9,7 @@ public class Player {
     private int y; //เก็บตำแหน่ง
     private int speedx = 0; //กำหนดความเร็วในแนวแกน
     private int speedy = 0;
+    private boolean isGround = false;
 
 
 
@@ -28,8 +29,9 @@ public class Player {
         if (y <= 0) {
             y = 0;
         }
-        if (y > 320) {
-            y = 320;
+        if (y > 360) {
+            y = 360;
+            isGround = true;
         }
         if (x > 600) {
             x = 600;
@@ -55,9 +57,10 @@ public class Player {
             speedx = -5; //วิ่งย้อนกลับ5
         }
 
-        if (key == KeyEvent.VK_SPACE) {
+        if (key == KeyEvent.VK_SPACE && isGround) {
             speedy = -10;//แนวแกนวาย
             speedx = 5;
+            isGround = false;
 
         }
         if (key == KeyEvent.VK_DOWN) {
@@ -77,9 +80,10 @@ public class Player {
             speedx = -0;
             speedy = -0;
         }
-        if (key == KeyEvent.VK_SPACE) {
+        if (key == KeyEvent.VK_SPACE ) {
             speedy = 5;
             speedx = 0;
+
 
         }
         if (key == KeyEvent.VK_DOWN) {

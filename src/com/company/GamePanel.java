@@ -22,7 +22,7 @@ public class GamePanel extends JPanel implements ActionListener{
     public GamePanel(){
         loop = new Timer(10,this);
         loop.start();
-        player= new Player(1,320);
+        player= new Player(1,360);
         addKeyListener(new keyinput(player));
         setFocusable(true);
 
