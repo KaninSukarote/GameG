@@ -9,7 +9,7 @@ import java.awt.*;
 public class Frame extends JFrame{
 
 
-    public static String name = "Game";
+    public static String name = "CHUBBY BOY";
 
 
     public Frame() {

@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
@@ -10,6 +11,7 @@ public class Player {
     private int speedx = 0; //กำหนดความเร็วในแนวแกน
     private int speedy = 0;
     private boolean isGround = false;
+    public Image pl;
 
 
 
@@ -29,8 +31,8 @@ public class Player {
         if (y <= 0) {
             y = 0;
         }
-        if (y > 360) {
-            y = 360;
+        if (y > 300) {
+            y = 300;
             isGround = true;
         }
         if (x > 600) {
@@ -41,8 +43,12 @@ public class Player {
 
     //วาดตัวละครผู้เล่น
     public void draw(Graphics2D g2d) {
-        g2d.setColor(Color.black); //ใส่สีให้กล่อง
-        g2d.fillOval(x, y, 40, 40);//วาดกล่องที่ตำแหน่งเอ็กวายขนาด32*32
+        pl = new ImageIcon("Image/Untitled-1.png").getImage();
+        g2d.drawImage(pl, x, y, null);
+
+
+        //g2d.setColor(Color.black); //ใส่สีให้กล่อง
+        //g2d.fillOval(x, y, 40, 40);//วาดกล่องที่ตำแหน่งเอ็กวาย
 
     }
 
